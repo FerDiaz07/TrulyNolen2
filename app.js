@@ -10,8 +10,9 @@ app.use(express.static('src'))
 app.set('views', './views')
 app.set('view engine', 'ejs')
 
+const port = process.env.PORT || 3000;
 
-app.listen('3000',function(){ 
+app.listen(port,"0.0.0.0",function(){ 
     console.log('Aplicacion Iniciada : http://localhost:3000/')
 })
 
