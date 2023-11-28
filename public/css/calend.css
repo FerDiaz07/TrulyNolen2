@@ -43,7 +43,7 @@
 
 
 .container-2 {
-    height: 46vh;
+    height: 40vh;
     display: grid;
     place-items: center;
     font-family: var(--font-family);
@@ -326,7 +326,7 @@
 }
 button span {
    /* background-color: #111;*/
-    padding: 12px 13px;
+    padding: 10px 11px;
     border-radius: 6px;
     transition: .3s;
     margin-left: 0px;

@@ -16,79 +16,129 @@
     <link rel="stylesheet" href="css/calendario.css" />
     <title>Agendar Citas</title>
     <link rel="shortcut icon" href="images/favicon-32x32-.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+
 
   </head>
   
   <body>
-    <div class="container">
-      <div class="left">
-        <div class="calendar">
-          <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">deciembre 2015</div>
-            <i class="fas fa-angle-right next"></i>
-          </div>
-          <div class="weekdays">
-            <div>Dom</div>
-            <div>Lun</div>
-            <div>Mar</div>
-            <div>Mier</div>
-            <div>Jue</div>
-            <div>Vie</div>
-            <div>Sab</div>
-          </div>
-          <div class="days"></div>
-          <div class="goto-today">
-            <div class="goto">
-              <input type="text" placeholder="mm/yyyy" class="date-input" />
-              <button class="goto-btn">Vamos</button>
-            </div>
-            <button class="today-btn">Hoy</button>
-          </div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="today-date">
-          <div class="event-day">Mier</div>
-          <div class="event-date">12 deciembre 2023</div>
-        </div>
-        <div class="events"></div>
-        <div class="add-event-wrapper">
-          <div class="add-event-header">
-            <div class="title">Agregar Evento</div>
-            <i class="fas fa-times close"></i>
-          </div>
-          <div class="add-event-body">
-            <div class="add-event-input">
-              <input type="text" placeholder="Nombre Evento" class="event-name" />
-            </div>
-            <div class="add-event-input">
-              <input
-                type="text"
-                placeholder="Hora del evento desde"
-                class="event-time-from"
-              />
-            </div>
-            <div class="add-event-input">
-              <input
-                type="text"
-                placeholder="Hora del evento hasta"
-                class="event-time-to"
-              />
-            </div>
-          </div>
-          <div class="add-event-footer">
-            <button class="add-event-btn">Agregar Evento</button>
-          </div>
-        </div>
-      </div>
-      <button class="add-event">
-        <i class="fas fa-plus"></i>
-      </button>
-    </div>
 
-    
+
+        <header>
+          <!-- header inner -->
+          <div class="header">
+             <div class="container-fluid">
+                <div class="row">
+                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                   </div>
+                   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                      <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                         </button>
+                         <div class="collapse navbar-collapse" id="navbarsExample04">
+                            <ul class="navbar-nav mr-auto">
+                              <li class="nav-item">
+                                <a class="nav-link" href='/main'>Inicio</a>
+                             </li>
+                               <li class="nav-item">
+                                  <a class="nav-link" href="/truly">Trulyn</a>
+                               </li>
+                               <li class="nav-item">
+                                  <a class="nav-link" href="/ventas">Ventas </a>
+                               </li>
+                               <li class="nav-item">
+                                  <a class="nav-link" href="/postventa">Post Ventas</a>
+                               </li>
+                               <li class="nav-item d_none login_btn">
+                                  <a class="nav-link"  type="button" id="CerrarSesion">Cerrar Sesión</a>
+                               </li>
+                            </ul>
+                         </div>
+                      </nav>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </header>
+
+ 
+
+      <div class="row-2">
+        <div class="container">
+          <div class="left">
+            <div class="calendar">
+              <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">deciembre 2015</div>
+                <i class="fas fa-angle-right next"></i>
+              </div>
+              <div class="weekdays">
+                <div>Dom</div>
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mier</div>
+                <div>Jue</div>
+                <div>Vie</div>
+                <div>Sab</div>
+              </div>
+              <div class="days"></div>
+              <div class="goto-today">
+                <div class="goto">
+                  <input type="text" placeholder="mm/yyyy" class="date-input" />
+                  <button class="goto-btn">Vamos</button>
+                </div>
+                <button class="today-btn">Hoy</button>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="today-date">
+              <div class="event-day">Mier</div>
+              <div class="event-date">12 deciembre 2023</div>
+            </div>
+            <div class="events"></div>
+            <div class="add-event-wrapper">
+              <div class="add-event-header">
+                <div class="title">Agregar Evento</div>
+                <i class="fas fa-times close"></i>
+              </div>
+              <div class="add-event-body">
+                <div class="add-event-input">
+                  <input type="text" placeholder="Nombre Evento" class="event-name" />
+                </div>
+                <div class="add-event-input">
+                  <input
+                    type="text"
+                    placeholder="Hora del evento desde"
+                    class="event-time-from"
+                  />
+                </div>
+                <div class="add-event-input">
+                  <input
+                    type="text"
+                    placeholder="Hora del evento hasta"
+                    class="event-time-to"
+                  />
+                </div>
+              </div>
+              <div class="add-event-footer">
+                <button class="add-event-btn">Agregar Evento</button>
+              </div>
+            </div>
+          </div>
+          <button class="add-event">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>    
+
+      </div>
+
 
     <script src="js/calendario.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
