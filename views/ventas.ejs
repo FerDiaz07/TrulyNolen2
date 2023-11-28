@@ -18,6 +18,8 @@
       <link rel="stylesheet" href="css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
+
+      <link rel="stylesheet" href="css/FormularioStyle.css">
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
@@ -73,37 +75,82 @@
             </div>
          </div>
       </header>
+      
+      <div class="container">
+         <main class="table">
+            <section class="table__header">
+                <h1>Formulario Ventas</h1>
+                <!--<div class="input-group">
+                    <input type="search" placeholder="Search Data...">
+                    <img src="images/search.png" alt="">
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                        <label>Export As &nbsp; &#10140;</label>
+                        <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                        <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                        <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                        <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                    </div>
+                </div>-->
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ServidorID</th>
+                            <th> Vendedor</th>
+                            <th> Cliente</th>
+                            <th> nivelServicio</th>
+                            <th> FechaInicio</th>
+                            <th> FechaFin</th>
+                            <th> Frecuencia</th>
+                            <th> ValorTentativo</th>
+                            <th> Estado</th>
+                            <th> Observaciones</th>
+    
+                            <!--<th> Observaciones <span class="icon-arrow">&UpArrow;</span></th> Para que salga el icono de la fecha-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 1 </td>
+                            <td>Victor</td>
+                            <td>Kevin</td>
+                            <td>Fumigacion</td>
+                            <td>2023-11-22</td>
+                            <td>2023-11-23</td>
+                            <td>Seguido</td>
+                            <td>1000</td>
+                            <td>
+                                <p class="status delivered">Aceptado</p>
+                            </td>
+                            <td>Recibido</td>
+                        </tr>
+                        <tr>
+                            <td> 2 </td>
+                            <td>Kevin</td>
+                            <td>Luis</td>
+                            <td>Fumigacion</td>
+                            <td>2023-11-22</td>
+                            <td>2023-11-23</td>
+                            <td>Seguido</td>
+                            <td>500</td>
+                            <td>
+                                <p class="status cancelled">Cancelado</p>
+                            </td>
+                            <td>No hizo el pago</td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </section>
+        </main>
 
-       <!-- tabla principal--> 
-       <div class="container my-4">
-                
-         <div class="row">
-             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                 <table id="datatable_users" class="table table-striped">
-                  <thead>
-                     <tr>
-                         <th class="centered">id</th>
-                         <th class="centered">razon social</th>
-                         <th class="centered">identificador</th>
-                         <th class="centered">RTN</th>
-                        
-                     </tr>
-                 </thead>
-                 <tbody id="tableBody_users">
-                 
-                       <% resultado.forEach((Clientes) => { %>
-                   <tr>
-                       <td class="centered"><%= Clientes.clienteId %></td>
-                       <td class="centered"><%= Clientes.razonsocial %></td>
-                       <td class="centered"><%= Clientes.identificador %></td>
-                       <td class="centered"><%= Clientes.rtn %></td>
-                   </tr>    
-                       <% }); %>
-                   </tbody> 
-                 </table>
-             </div>
-         </div>
-     </div>
+      </div>
+    
       <!-- end header inner -->
       <!-- end header -->
       <!-- about section -->
