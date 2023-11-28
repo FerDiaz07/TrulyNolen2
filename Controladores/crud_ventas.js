@@ -7,7 +7,8 @@ crud_ventas.leer = (req, res) => {
         if (error) {
             throw error;
         }else{            
-            res.render('Ventas',{resultado: results})
+            res.render('ventas',{resultado: results})
         }
     })        
 }
+export {crud_ventas};

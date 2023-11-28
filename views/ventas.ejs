@@ -75,11 +75,11 @@
             </div>
          </div>
       </header>
-      
+
       <div class="container">
          <main class="table">
             <section class="table__header">
-                <h1>Formulario Ventas</h1>
+                <h1>Ventas por aprobar</h1>
                 <!--<div class="input-group">
                     <input type="search" placeholder="Search Data...">
                     <img src="images/search.png" alt="">
@@ -99,50 +99,38 @@
             <section class="table__body">
                 <table>
                     <thead>
+                     <tr>
+                        <th class="centered">Idservicio</th>
+                        <th class="centered">Vendedor</th>
+                        <th class="centered">Cliente</th>
+                        <th class="centered">Nivel de servicio</th>
+                        <th class="centered">Fecha Inicio</th>
+                        <th class="centered">CFecha fin</th>
+                        <th class="centered">Frecuencia</th>
+                        <th class="centered">valor Temtativo</th>
+                        <th class="centered">Estado</th>
+                        <th class="centered">Observaciones </th>
+                        
+                       
+                    </tr>
+                     <% resultado.forEach((ventas) => { %>
                         <tr>
-                            <th>ServidorID</th>
-                            <th> Vendedor</th>
-                            <th> Cliente</th>
-                            <th> nivelServicio</th>
-                            <th> FechaInicio</th>
-                            <th> FechaFin</th>
-                            <th> Frecuencia</th>
-                            <th> ValorTentativo</th>
-                            <th> Estado</th>
-                            <th> Observaciones</th>
-    
+                            <th><%= ventas.ServidorId %></th>
+                            <th> <%= ventas.Vendedor %></th>
+                            <th> <%= ventas.Cliente %></th>
+                            <th> <%= ventas.nivelServicio %></th>
+                            <th> <%= ventas.FechaInicio %></th>
+                            <th> <%= ventas.FechaFin %></th>
+                            <th> <%= ventas.frecuecia %></th>
+                            <th> <%= ventas.valorTentativo %></th>
+                            <th> <%=  ventas.Estado %></th>
+                            <th> <%= ventas.observaciones %></th>
+                          
                             <!--<th> Observaciones <span class="icon-arrow">&UpArrow;</span></th> Para que salga el icono de la fecha-->
                         </tr>
+                        <% }); %>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td>Victor</td>
-                            <td>Kevin</td>
-                            <td>Fumigacion</td>
-                            <td>2023-11-22</td>
-                            <td>2023-11-23</td>
-                            <td>Seguido</td>
-                            <td>1000</td>
-                            <td>
-                                <p class="status delivered">Aceptado</p>
-                            </td>
-                            <td>Recibido</td>
-                        </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td>Kevin</td>
-                            <td>Luis</td>
-                            <td>Fumigacion</td>
-                            <td>2023-11-22</td>
-                            <td>2023-11-23</td>
-                            <td>Seguido</td>
-                            <td>500</td>
-                            <td>
-                                <p class="status cancelled">Cancelado</p>
-                            </td>
-                            <td>No hizo el pago</td>
-                        </tr>
                        
                     </tbody>
                 </table>
