@@ -42,7 +42,7 @@ crud_cliente.agregarC = (req, res) => {
             }
         });
     }
-     if(btn_actualizar){
+    if(btn_actualizar){
         con.query('update Clientes set ? where clienteid = ?',[ {clienteid:id,razonsocial:cliente,identificador:identificador,rtn:rtn},id], (error,results) =>{
             con.query('update Sucursales set ? where  clienteid = ? ',[ {clienteid:id,razonsocial:cliente,identificador:identificador,rtn:rtn},id], (error,results) =>{
                 
@@ -73,16 +73,13 @@ crud_cliente.agregarC = (req, res) => {
         });
 
 
-
-
-
-
-
-
+     }
 };
 
-
 export {crud_cliente};
+
+
+
 
 
 
