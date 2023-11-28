@@ -76,6 +76,7 @@ crud_cliente.agregarC = (req, res) => {
      }
 };
 
+
 export {crud_cliente};
 
 
