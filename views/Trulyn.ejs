@@ -88,46 +88,48 @@
                       <div class="box">
                           <div class="container">
                           
-                           <form id="formulario-crear">
+                           <form id="formulario-crear" action="/crud_c" method="post">
          
                               <div class="form-group">
                                  <label for="id">ClienteID</label>
-                                 <input type="text" class="form-control" name="id" placeholder="Example input">
+                                 <input type="number" class="form-control" id="id" name="id" placeholder="Example input">
                                </div>
          
                               <div class="form-group">
                                  <label for="cliente">Cliente</label>
-                                 <input type="text" class="form-control" name="cliente" placeholder="Example input">
+                                 <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Example input">
                                </div>
                                <div class="form-group">
                                  <label for="identificador">Identificador</label>
-                                 <input type="text" class="form-control" name="identificador" placeholder="Another input">
+                                 <input type="text" class="form-control" id="identificador" name="identificador" placeholder="Another input">
                                </div>
                                
                                <div class="form-group">
                                  <label for="rtn">RTN</label>
-                                 <input type="text" class="form-control" name="rtn" placeholder="Another input">
+                                 <input type="text" class="form-control" id="rtn" name="rtn" placeholder="Another input">
                                </div>
 
                                <div class="form-group">
                                  <label for="direccion">Direccion</label>
-                                 <input type="text" class="form-control" name="direccion" placeholder="Another input">
+                                 <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Another input">
                                </div>
 
                                <div class="form-group">
                                  <label for="contacto">Contacto</label>
-                                 <input type="text" class="form-control" name="contacto" placeholder="Another input">
+                                 <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Another input">
                                </div>
 
                                <div class="form-group">
                                  <label for="telefono">Telefono</label>
-                                 <input type="text" class="form-control" name="telefono" placeholder="Another input">
+                                 <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Another input">
                                </div>
 
                                
 
                                
-                               <input class="btn btn-primary" type="submit" value="Submit" id="Insert">
+                               <input class="btn btn-primary" type="submit" value="Submit" id="Insert" name="Insert">
+                               <input class="btn btn-primary" type="submit" value="update" id="update" name="update">
+
                             </form>
                              
                           </div>
@@ -185,7 +187,7 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
-      <script src="../src/main.js"></script>
+      <script src="main.js"></script>
    </body>
 </html>
 

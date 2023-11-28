@@ -1,11 +1,14 @@
 import express  from "express"
-import {con} from "./modelo/db.js"
+import { crud_cliente } from "./Controladores/crud_clientes.js";
 
 
 const app = express();
 
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
 app.use(express.static('public'))
 app.use(express.static('src'))
+app.use(express.static('Controladores'))
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -17,13 +20,7 @@ app.listen(port,"0.0.0.0",function(){
 })
 
 app.get('/',function(req,res){
-    con.query('select * from Clientes',(error , results)=>{
-        if (error) {
-            throw error;
-        }else{            
-            res.render('index',{resultado: results})
-        }
-    })        
+    res.render('index')       
 })
 
 app.get('/login',function(req,res){
@@ -38,17 +35,11 @@ app.get('/registro',function(req,res){
         
 })
 
-app.get('/main',function(req,res){
+app.get('/main',crud_cliente.leer);
 
-    con.query('select * from Clientes',(error , results)=>{
-        if (error) {
-            throw error;
-        }else{            
-            res.render('PaginaPrincipal',{resultado: results})
-        }
-    }) 
+   
         
-})
+
 
 app.get('/ventas',function(req,res){
 
@@ -61,6 +52,8 @@ app.get('/truly',function(req,res){
     res.render('Trulyn')
         
 })
+
+app.post('/crud_c',crud_cliente.agregarC);
 
 app.get('/postventa',function(req,res){
 
