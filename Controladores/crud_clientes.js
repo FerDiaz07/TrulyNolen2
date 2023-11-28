@@ -63,7 +63,12 @@ crud_cliente.agregarC = (req, res) => {
      if(btn_borrar){
         con.query('delete from Clientes where clienteid = ?',[ id ], (error,results) =>{
 
-
+            con.query('update Sucursales set ? where  clienteid = ? ',[id], (error,results) =>{
+                
+                if (error) {
+                    console.log(error);
+                }
+            })
             if (error) {
                 console.log(error);
             }else{            
