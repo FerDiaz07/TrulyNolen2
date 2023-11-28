@@ -73,7 +73,12 @@ crud_cliente.agregarC = (req, res) => {
         });
 
 
-     }
+
+
+
+
+
+
 };
 
 
