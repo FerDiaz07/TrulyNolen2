@@ -73,6 +73,37 @@
             </div>
          </div>
       </header>
+
+       <!-- tabla principal--> 
+       <div class="container my-4">
+                
+         <div class="row">
+             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                 <table id="datatable_users" class="table table-striped">
+                  <thead>
+                     <tr>
+                         <th class="centered">id</th>
+                         <th class="centered">razon social</th>
+                         <th class="centered">identificador</th>
+                         <th class="centered">RTN</th>
+                        
+                     </tr>
+                 </thead>
+                 <tbody id="tableBody_users">
+                 
+                       <% resultado.forEach((Clientes) => { %>
+                   <tr>
+                       <td class="centered"><%= Clientes.clienteId %></td>
+                       <td class="centered"><%= Clientes.razonsocial %></td>
+                       <td class="centered"><%= Clientes.identificador %></td>
+                       <td class="centered"><%= Clientes.rtn %></td>
+                   </tr>    
+                       <% }); %>
+                   </tbody> 
+                 </table>
+             </div>
+         </div>
+     </div>
       <!-- end header inner -->
       <!-- end header -->
       <!-- about section -->
