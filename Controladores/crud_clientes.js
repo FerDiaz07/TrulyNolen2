@@ -3,7 +3,7 @@ import {con} from "../modelo/db.js"
 
 var crud_cliente = ({});
 crud_cliente.leer = (req, res) => {
-    con.query('select * from Clientes',(error , results)=>{
+    con.query('select * from Clientes c left join Sucursales s ON c.clienteid = s.clienteid',(error , results)=>{
         if (error) {
             throw error;
         }else{            
@@ -11,6 +11,19 @@ crud_cliente.leer = (req, res) => {
         }
     })        
 }
+
+var crud_truly = ({});
+crud_truly.leer = (req, res) => {
+    con.query('select * from Clientes c left join Sucursales s ON c.clienteid = s.clienteid',(error , results)=>{
+        if (error) {
+            throw error;
+        }else{            
+            res.render('Trulyn',{resultado: results})
+        }
+    })        
+}
+
+
 
 crud_cliente.agregarC = (req, res) => {
 
@@ -82,7 +95,4 @@ crud_cliente.agregarC = (req, res) => {
 };
 
 export {crud_cliente};
-
-
-
-
+export {crud_truly};

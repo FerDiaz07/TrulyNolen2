@@ -1,6 +1,7 @@
 import express  from "express"
 import { crud_cliente } from "./Controladores/crud_clientes.js";
 import { crud_ventas} from "./Controladores/crud_ventas.js";
+import { crud_truly } from "./Controladores/crud_clientes.js";
 
 const app = express();
 
@@ -36,6 +37,8 @@ app.get('/registro',function(req,res){
 })
 
 app.get('/main',crud_cliente.leer);
+
+app.get('/truly',crud_truly.leer);
 
 app.get('/ventas',crud_ventas.leer);
 

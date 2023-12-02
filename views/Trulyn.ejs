@@ -18,6 +18,7 @@
       <link rel="stylesheet" href="css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="css/user-form.css" >
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
@@ -85,6 +86,9 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- about section -->
+
+
+      <!--
       <div class="about">
          <div class="container">
             <div class="row d_flex">
@@ -152,8 +156,134 @@
          </div>
       </div>
      
-     
-    
+     -->
+
+     <div class="container">
+      <div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
+         <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item">
+            <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">Lista</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Formulario</a>				   	
+            </li>
+         </ul>
+         <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+               <div class="card">
+                  <div class="card-header">
+                     <h4>Clientes</h4>
+                  </div>
+                  <div class="card-body">
+                     <div class="table-responsive">
+                        <table id="userList" class="table table-bordered table-hover table-striped">
+                           <thead class="thead-light">
+                           <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Razon Social</th>
+                              <th scope="col">Identificador</th>
+                              <th scope="col">RTN</th>
+                              <th scope="col">Direccion</th>
+                              <th scope="col">Contacto</th>
+                              <th scope="col">Telefono</th>
+                              <th scope="col">accion</th>
+                           </tr>
+                           </thead>
+       
+                              <tbody id="tableBody_users">
+                          
+                                 <% resultado.forEach((Clientes) => { %>
+                             <tr>
+                                 <td class="centered"><%= Clientes.clienteId %></td>
+                                 <td class="centered"><%= Clientes.razonsocial %></td>
+                                 <td class="centered"><%= Clientes.identificador %></td>
+                                 <td class="centered"><%= Clientes.rtn %></td>
+                                 <td class="centered"><%= Clientes.direccion %></td>
+                                 <td class="centered"><%= Clientes.contacto %></td>
+                                 <td class="centered"><%= Clientes.telefono %></td>
+                                 <td>
+                                    <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times" type="submit" value="borrar" id="borrar" name="borrar"></i></a>
+            
+                                 </td>   
+                             </tr>    
+                                 <% }); %>
+                                
+                             </tbody> 
+                        </table>
+                     </div>
+   
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+               <div class="card">
+                  <div class="card-header">
+                     <h4>Informacion del Cliente</h4>
+                  </div>
+                  <div class="card-body">
+                     <form class="form"  id="formulario-crear" action="/crud_c" method="post">
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">ID</label>
+                           <div class="col-lg-9">
+                              <input type="number" class="form-control" id="id" name="id" placeholder="ID">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">Cliente</label>
+                           <div class="col-lg-9">
+                              <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Nombre del cliente">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">Identificador</label>
+                           <div class="col-lg-9">
+                              <input type="text" class="form-control" id="identificador" name="identificador" placeholder="Identidad">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">RTN</label>
+                           <div class="col-lg-9">
+                              <input type="text" class="form-control" id="rtn" name="rtn" placeholder="RTN">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">Direccion</label>
+                           <div class="col-lg-9">
+                              <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">Contacto</label>
+                           <div class="col-lg-9">
+                              <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Contacto">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+                           <div class="col-lg-9">
+                              <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono">
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-lg-12 text-center">
+
+                           </div>
+                        </div>
+                        <input class="btn btn-success" type="submit" value="Submit" id="Insert" name="Insert">
+                        <input class="btn btn-primary" type="submit" value="update" id="actualizar" name="actualizar">
+                        <input class="btn btn-danger" type="submit" value="borrar" id="borrar" name="borrar">
+                        <input type="reset" class="btn btn-secondary" value="Cancel">
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+   <br>
+   <br>
+   <br>
      
 
 
